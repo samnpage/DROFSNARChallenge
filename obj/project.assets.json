@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\samso\\Documents\\CodingProjects\\ElevenFiftyProjects\\codingFoundations\\assignments\\DrofsnarChallenge\\DROFSNAR_CHALLENGE\\Challenge.csproj",
+      "projectUniqueName": "C:\\Users\\samso\\Documents\\CodingProjects\\ElevenFiftyProjects\\codingFoundations\\assignments\\DrofsnarChallenge\\Challenge.csproj",
       "projectName": "Challenge",
-      "projectPath": "C:\\Users\\samso\\Documents\\CodingProjects\\ElevenFiftyProjects\\codingFoundations\\assignments\\DrofsnarChallenge\\DROFSNAR_CHALLENGE\\Challenge.csproj",
+      "projectPath": "C:\\Users\\samso\\Documents\\CodingProjects\\ElevenFiftyProjects\\codingFoundations\\assignments\\DrofsnarChallenge\\Challenge.csproj",
       "packagesPath": "C:\\Users\\samso\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\samso\\Documents\\CodingProjects\\ElevenFiftyProjects\\codingFoundations\\assignments\\DrofsnarChallenge\\DROFSNAR_CHALLENGE\\obj\\",
+      "outputPath": "C:\\Users\\samso\\Documents\\CodingProjects\\ElevenFiftyProjects\\codingFoundations\\assignments\\DrofsnarChallenge\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\samso\\AppData\\Roaming\\NuGet\\NuGet.Config"
