@@ -9,77 +9,154 @@ BirdHunters birdHunters = new BirdHunters();
 string filePath = @"C:\Users\samso\Documents\CodingProjects\ElevenFiftyProjects\codingFoundations\assignments\DrofsnarChallenge\assets\game-sequence.txt";
 List<string> lines = File.ReadAllLines(filePath).ToList();
 
+Console.WriteLine("DROFSNAR THE BIRD-MAN\nScore: 5000\nLives: 3\n");
+
 foreach (string line in lines)
 {
-    // line.Split(',');
-    Console.WriteLine(line);
-}
+    string[] parts = line.Split(',');
 
-// Loop that checks each list item and applys the correct object as its value and writes it to the console
-foreach (string line in lines)
+    bool lifeAdded = false; // Flag to track if life as been added.
+
+    foreach (string part in parts)
     {
-        if (line == "Bird")
+        if (player.Lives > 0)
         {
-            Console.WriteLine(birdTypes.Bird);
-        }
-        else if (line == "CrestedIbis")
-        {
-            Console.WriteLine(birdTypes.CrestedIbis);
-        }
-        else if (line == "GreatKiskudee")
-        {
-            Console.WriteLine(birdTypes.GreatKiskudee);
-        }
-        else if (line == "RedCrossbill")
-        {
-            Console.WriteLine(birdTypes.RedCrossbill);
-        }
-        else if (line == "RedNeckedPhalarope")
-        {
-            Console.WriteLine(birdTypes.RedNeckedPhalarope);
-        }
-        else if (line == "EveningGrosbeak")
-        {
-            Console.WriteLine(birdTypes.EveningGrosbeak);
-        }
-        else if (line == "GreaterPrairieChicken")
-        {
-            Console.WriteLine(birdTypes.GreaterPrairieChicken);
-        }
-        else if (line == "IcelandGull")
-        {
-            Console.WriteLine(birdTypes.IcelandGull);
-        }
-        else if (line == "GreaterPrairieChicken")
-        {
-            Console.WriteLine(birdTypes.GreaterPrairieChicken);
-        }
-        else if (line == "OrangeBelliedParrot")
-        {
-            Console.WriteLine(birdTypes.OrangeBelliedParrot);
-        }
-        else if (line == "InvincibleBirdHunter")
-        {
-            Console.WriteLine(birdHunters.InvincibleBirdHunter);
-        }
-        else if (line == "VulnerableBirdHunter")
-        {
-            Console.WriteLine(birdHunters.VulnerableBirdHunter);
+            if (part == "Bird")
+            {
+                player.Points += birdTypes.Bird;
+                Console.Write($"Bird found!\n" + 
+                                $"+{birdTypes.Bird} points\n"
+                            );
+            }
+            else if (part == "CrestedIbis")
+            {
+                player.Points += birdTypes.CrestedIbis;
+                Console.Write($"Crested Ibis found!\n" + 
+                                $"+{birdTypes.CrestedIbis} points\n"
+                            );
+            }
+            else if (part == "GreatKiskudee")
+            {
+                player.Points += birdTypes.GreatKiskudee;
+                Console.Write($"Great Kiskudee found!\n" + 
+                                $"+{birdTypes.GreatKiskudee} points\n"
+                            );
+            }
+            else if (part == "RedCrossbill")
+            {
+                player.Points += birdTypes.RedCrossbill;
+                Console.Write($"Red Cross Bill found!\n" + 
+                                $"+{birdTypes.RedCrossbill} points\n"
+                            );
+            }
+            else if (part == "Red-neckedPhalarope")
+            {
+                player.Points += birdTypes.RedNeckedPhalarope;
+                Console.Write($"Red Necked Phalarope found!\n" + 
+                                $"+{birdTypes.RedNeckedPhalarope} points\n"
+                            );
+            }
+            else if (part == "EveningGrosbeak")
+            {
+                player.Points += birdTypes.EveningGrosbeak;
+                Console.Write($"Evening Grosbeak found!\n" + 
+                                $"+{birdTypes.EveningGrosbeak} points\n" 
+                            );
+            }
+            else if (part == "GreaterPrairieChicken")
+            {
+                player.Points += birdTypes.GreaterPrairieChicken;
+                Console.Write($"Greater Prairie Chicken found!\n" + 
+                                $"+{birdTypes.GreaterPrairieChicken} points\n"
+                            );
+            }
+            else if (part == "IcelandGull")
+            {
+                player.Points += birdTypes.IcelandGull;
+                Console.Write($"Iceland Gull found!\n" + 
+                                $"+{birdTypes.IcelandGull} points\n"
+                            );
+            }
+            else if (part == "Orange-belliedParrot")
+            {
+                player.Points += birdTypes.OrangeBelliedParrot;
+                Console.Write($"Orange-Bellied Parrot found!\n" + 
+                                $"+{birdTypes.OrangeBelliedParrot} points\n"
+                            );
+            }
+            else if (part == "InvincibleBirdHunter")
+            {
+                player.Lives -= 1;
+                Console.Write($"Uh oh!\n" +
+                                $"A bird hunter chomped DROFSNAR!\n" +
+                                $"{player.Lives} lives remaining.\n"
+                            );
+            }
+            else if (part == "VulnerableBirdHunter")
+            {
+                int num = birdHunters.VulnerableBirdHunter;
+                if (num == 1)
+                {
+                    player.Points += 200;
+                    birdHunters.VulnerableBirdHunter += 1;
+                    Console.Write($"Bird hunter defeated!\n" + 
+                                    $"+200 points\n"
+                                );
+                }
+                else if (num == 2)
+                {
+                    player.Points += 400;
+                    birdHunters.VulnerableBirdHunter += 1;
+                    Console.Write($"Bird hunter defeated!\n" + 
+                                    $"+400 points\n"
+                                );
+                }
+                else if (num == 3)
+                {
+                    player.Points += 800;
+                    birdHunters.VulnerableBirdHunter += 1;
+                    Console.Write($"Bird hunter defeated!\n" + 
+                                    $"+800 points\n"
+                                );
+                }
+                else if (num >= 4)
+                {
+                    player.Points += 1600;
+                    Console.Write($"Bird hunter defeated!\n" + 
+                                    $"+1600 points\n"
+                                );
+                }
+                else
+                {
+                    Console.WriteLine("oops");
+                }
+            }
+            
+            if (player.Points > 10000 && !lifeAdded)
+            {
+                player.Lives += 1;
+                lifeAdded = true;
+                Console.Write("DROFSNAR has over 10,000 points!\nOne extra life added!\n");
+            }
+
+            Console.WriteLine("");
         }
         else
         {
-            Console.WriteLine("oops");
+            break;
         }
-    };
+    }
+}
+
+Console.Write($"GAME OVER!\nTotal Score: {player.Points}\n");
 
 // Classes setup to assign values to each character type
 namespace GameValues
 {
     class DROFSNAR
     {
-        public int StartingPoints { get; set; } = 5000;
-        public int StartingLives { get; set; } = 3;
-
+        public int Points { get; set; } = 5000;
+        public int Lives { get; set; } = 3;
     }
 
     class BirdHunters
